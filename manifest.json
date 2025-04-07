@@ -1,30 +1,28 @@
 {
   "manifest_version": 3,
-  "name": "Velog Spam Blocker",
+  "name": "Velog Cleaner",
   "version": "1.0",
-  "description": "Velog에서 스팸 게시글을 자동으로 차단합니다.",
-  "permissions": ["storage", "scripting"],
+  "description": "Velog에서 스팸 게시물을 자동으로 숨겨줍니다.",
+  "permissions": ["storage"],
   "host_permissions": ["https://velog.io/*"],
   "action": {
-    "default_icon": {
-      "16": "icons/icon_16x16.png",
-      "48": "icons/icon_48x48.png",
-      "128": "icons/icon_128x128.png"
-    },
     "default_popup": "popup.html",
-    "default_title": "velog Cleaner"
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
   },
   "content_scripts": [
     {
       "matches": ["https://velog.io/*"],
       "js": ["content.js"],
-      "run_at": "document_end"
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["keywords.json"],
-      "matches": ["<all_urls>"]
+      "run_at": "document_idle"
     }
   ]
 }
