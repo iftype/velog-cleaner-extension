@@ -1,4 +1,5 @@
 # Velog Cleaner
+![밸로그](https://github.com/user-attachments/assets/f5dd9b30-91dd-4510-9cee-a7453d503dbc)
 
 Velog Cleaner는 벨로그(Velog)에서 원하지 않는 게시글을 키워드 기반으로 자동으로 숨겨주는 크롬 확장 프로그램입니다.
 
@@ -28,15 +29,7 @@ Velog Cleaner는 벨로그(Velog)에서 원하지 않는 게시글을 키워드 
 이 확장 프로그램은 다음과 같은 권한을 요청합니다:
 
 - `storage`: 키워드 설정값을 브라우저에 저장하기 위해 필요합니다
-- `scripting`: 벨로그 페이지에 스크립트를 삽입하여 게시글을 숨기기 위해 사용됩니다
-- `activeTab` 및 `https://velog.io/*` 접근: 벨로그 페이지 상에서 기능을 작동시키기 위해 필요합니다
-
-### scripting 권한 사용 근거
-
-`scripting` API는 사용자의 현재 탭에 JavaScript를 주입하여 실시간으로 벨로그 게시글을 필터링하는 데 사용됩니다.  
-이는 핵심 기능을 수행하기 위해 필수적이며, 모든 동작은 사용자의 브라우저 내에서만 이루어집니다.
-
----
+- `https://velog.io/*` 접근: 벨로그 페이지 상에서 기능을 작동시키기 위해 필요합니다
 
 ## 🔐 개인정보 처리방침
 
