@@ -1,8 +1,8 @@
 const input = document.getElementById("keywordInput");
 const container = document.getElementById("tagContainer");
 
-function saveKeywords(keywords) {
-  chrome.storage.sync.set({ keywords });
+function updateKeywords(keywords) {
+  chrome.storage.sync.set({ keywords }, () => renderKeywords(keywords));
 }
 
 function renderKeywords(keywords) {
@@ -16,23 +16,20 @@ function renderKeywords(keywords) {
 }
 
 chrome.storage.sync.get(["keywords"], (result) => {
-  let keywords = result.keywords;
-  if (!Array.isArray(keywords) || keywords.length === 0) {
+  let keywords = Array.isArray(result.keywords) ? result.keywords : [];
+  if (keywords.length === 0) {
     keywords = ["티겟", "다방", "출장"];
-    saveKeywords(keywords);
-    renderKeywords(keywords);
-  } else {
-    renderKeywords(keywords);
   }
+  updateKeywords(keywords);
 });
 
 container.addEventListener("click", (e) => {
   if (e.target.tagName === "BUTTON") {
+    const index = parseInt(e.target.dataset.index);
     chrome.storage.sync.get(["keywords"], (result) => {
       const keywords = result.keywords || [];
-      keywords.splice(e.target.dataset.index, 1);
-      saveKeywords(keywords);
-      renderKeywords(keywords);
+      keywords.splice(index, 1);
+      updateKeywords(keywords);
     });
   }
 });
@@ -44,8 +41,7 @@ input.addEventListener("keydown", (e) => {
       const keywords = result.keywords || [];
       if (!keywords.includes(newWord)) {
         keywords.push(newWord);
-        saveKeywords(keywords);
-        renderKeywords(keywords);
+        updateKeywords(keywords);
       }
       input.value = "";
     });
