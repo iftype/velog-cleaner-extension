@@ -3,7 +3,9 @@
 
 Velog Cleaner는 벨로그(Velog)에서 원하지 않는 게시글을 키워드 기반으로 자동으로 숨겨주는 크롬 확장 프로그램입니다.
 
+[chrome 웹 스토어](https://chromewebstore.google.com/detail/velog-cleaner/jkaoncekiffdlafdeiebjkpagedpbcpl?hl=ko)
 ---
+
 
 ## ✨ 주요 기능
 
@@ -40,7 +42,7 @@ Velog Cleaner는 사용자 정보를 수집, 저장, 또는 외부로 전송하�
 
 ---
 
-## 📦 개발자 설치 방법
+## 📦 로컬 설치 방법
 
 1. 이 저장소를 다운로드하거나 클론합니다
 2. 크롬 브라우저에서 `chrome://extensions`로 이동
